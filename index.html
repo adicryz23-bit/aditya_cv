@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Gupta — Finance Professional</title>
-  <meta name="description" content="Aditya Gupta — Aspiring finance professional specialising in financial analysis, valuation, and investment strategy." />
+  <title>Aditya Gupta — Finance &amp; Investment</title>
+  <meta name="description" content="Aditya Gupta — Finance graduate specialising in financial analysis, valuation, and investment strategy." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0d12'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='26' font-weight='400' fill='%23c8a96e' letter-spacing='1'%3EAG%3C/text%3E%3C/svg%3E" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,32 +34,9 @@
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
-      cursor: none;
     }
 
-    /* ── CUSTOM CURSOR ── */
-    .cursor {
-      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
-    }
-    .cursor-dot {
-      width: 6px; height: 6px; background: var(--gold);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease;
-    }
-    .cursor-ring {
-      width: 36px; height: 36px;
-      border: 1px solid rgba(200,169,110,0.5);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: transform 0.18s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-    }
-    body:has(a:hover) .cursor-ring,
-    body:has(button:hover) .cursor-ring {
-      width: 56px; height: 56px; opacity: 0.6;
-    }
-
-    /* ── NOISE OVERLAY ── */
+    /* NOISE OVERLAY */
     body::before {
       content: '';
       position: fixed; inset: 0; pointer-events: none; z-index: 1;
@@ -66,7 +44,7 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -97,13 +75,12 @@
     .nav-links a:hover { color: var(--gold2); }
     .nav-links a:hover::after { right: 0; }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex; align-items: center;
       padding: 8rem 5vw 4rem;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0; pointer-events: none;
@@ -113,39 +90,31 @@
     }
     .hero-grid {
       position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
       background-size: 80px 80px;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
     }
     .hero-inner { position: relative; max-width: 1100px; }
     .hero-tag {
       font-family: 'DM Mono', monospace;
-      font-size: 0.68rem; letter-spacing: 0.25em;
-      color: var(--gold); text-transform: uppercase;
-      margin-bottom: 2rem;
+      font-size: 0.68rem; letter-spacing: 0.25em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 2rem;
       display: flex; align-items: center; gap: 1rem;
       opacity: 0; transform: translateY(20px);
       animation: fadeUp 0.8s ease 0.2s forwards;
     }
-    .hero-tag::before {
-      content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
-    }
+    .hero-tag::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 9vw, 8rem);
-      font-weight: 300; line-height: 0.95;
-      letter-spacing: -0.02em;
-      color: var(--white);
+      font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 300;
+      line-height: 0.95; letter-spacing: -0.02em; color: var(--white);
       opacity: 0; transform: translateY(30px);
       animation: fadeUp 0.9s ease 0.4s forwards;
     }
     h1 em { font-style: italic; color: var(--gold); }
     .hero-sub {
       margin-top: 2.5rem; max-width: 560px;
-      font-size: 1rem; font-weight: 300;
-      color: var(--silver); line-height: 1.8;
+      font-size: 1rem; font-weight: 300; color: var(--silver); line-height: 1.8;
       opacity: 0; transform: translateY(20px);
       animation: fadeUp 0.8s ease 0.7s forwards;
     }
@@ -155,33 +124,23 @@
       animation: fadeUp 0.8s ease 0.9s forwards;
     }
     .btn-primary {
-      padding: 0.9rem 2.4rem;
-      background: var(--gold);
-      color: var(--ink);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none; border: none; cursor: none;
+      padding: 0.9rem 2.4rem; background: var(--gold); color: var(--ink);
+      font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border: none;
       transition: background 0.3s ease, transform 0.2s ease;
     }
     .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
     .btn-outline {
-      padding: 0.9rem 2.4rem;
-      background: transparent;
-      color: var(--gold);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; font-weight: 400;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none;
+      padding: 0.9rem 2.4rem; background: transparent; color: var(--gold);
+      font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
       border: 1px solid rgba(200,169,110,0.4);
-      cursor: none;
       transition: border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold2); transform: translateY(-2px); }
     .hero-scroll {
       position: absolute; bottom: 3rem; left: 5vw;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem; letter-spacing: 0.2em;
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em;
       color: var(--silver); text-transform: uppercase;
       display: flex; align-items: center; gap: 1rem;
       opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards;
@@ -192,26 +151,21 @@
       animation: scrollLine 2s ease-in-out infinite;
     }
     @keyframes scrollLine {
-      0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-      50% { opacity: 0.4; transform: scaleY(0.6); transform-origin: bottom; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
-    /* ── SECTION COMMON ── */
+    /* SECTIONS */
     section { padding: 7rem 5vw; position: relative; }
     .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.3em;
-      color: var(--gold); text-transform: uppercase;
-      margin-bottom: 1rem;
+      font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 1rem;
       display: flex; align-items: center; gap: 1rem;
     }
-    .section-label::before {
-      content: ''; display: block; width: 30px; height: 1px; background: var(--gold);
-    }
+    .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
     h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      font-weight: 300; line-height: 1.1;
+      font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 300; line-height: 1.1;
       color: var(--white); margin-bottom: 3.5rem;
     }
     h2 em { font-style: italic; color: var(--gold); }
@@ -220,24 +174,15 @@
       background: linear-gradient(to right, transparent, var(--line) 20%, var(--line) 80%, transparent);
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about { background: var(--ink2); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: start;
-    }
-    .about-text p {
-      color: var(--silver); line-height: 1.9; margin-bottom: 1.2rem;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .about-text p { color: var(--silver); line-height: 1.9; margin-bottom: 1.2rem; }
     .about-text p strong { color: var(--light); font-weight: 400; }
-    .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2px;
-    }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .stat-box {
       background: var(--ink3); padding: 2rem 1.8rem;
-      border: 1px solid var(--line);
-      position: relative; overflow: hidden;
+      border: 1px solid var(--line); position: relative; overflow: hidden;
       transition: border-color 0.3s ease;
     }
     .stat-box:hover { border-color: rgba(200,169,110,0.45); }
@@ -246,228 +191,103 @@
       height: 2px; background: linear-gradient(to right, var(--gold), transparent);
     }
     .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; font-weight: 300;
-      color: var(--gold); line-height: 1;
-      margin-bottom: 0.5rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300;
+      color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
     }
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem; letter-spacing: 0.18em;
-      color: var(--silver); text-transform: uppercase;
-    }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; color: var(--silver); text-transform: uppercase; }
 
-    /* ── EXPERIENCE ── */
+    /* EXPERIENCE */
     #experience { background: var(--ink); }
-    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-list { display: flex; flex-direction: column; }
     .exp-item {
       display: grid; grid-template-columns: 200px 1fr;
       gap: 3rem; padding: 3rem 0;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-      transition: background 0.3s ease;
+      border-bottom: 1px solid var(--line); position: relative;
     }
     .exp-item::before {
-      content: ''; position: absolute;
-      left: 0; top: 0; bottom: 0; width: 0;
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
       background: linear-gradient(to right, rgba(200,169,110,0.04), transparent);
       transition: width 0.4s ease;
     }
     .exp-item:hover::before { width: 100%; }
-    .exp-meta { padding-top: 0.2rem; }
-    .exp-period {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.1em;
-      color: var(--gold); margin-bottom: 0.5rem;
-    }
-    .exp-company {
-      font-size: 0.85rem; color: var(--silver); line-height: 1.4;
-    }
-    .exp-role {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 400;
-      color: var(--white); margin-bottom: 0.6rem; line-height: 1.2;
-    }
-    .exp-location {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem; letter-spacing: 0.12em;
-      color: var(--silver); margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
+    .exp-period { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.5rem; }
+    .exp-company { font-size: 0.85rem; color: var(--silver); line-height: 1.4; }
+    .exp-role { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--white); margin-bottom: 0.6rem; line-height: 1.2; }
+    .exp-location { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--silver); margin-bottom: 1.2rem; text-transform: uppercase; }
     .exp-bullets { list-style: none; }
-    .exp-bullets li {
-      color: var(--silver); font-size: 0.92rem; line-height: 1.8;
-      margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative;
-    }
-    .exp-bullets li::before {
-      content: '—'; position: absolute; left: 0;
-      color: var(--gold); font-size: 0.8rem;
-    }
+    .exp-bullets li { color: var(--silver); font-size: 0.92rem; line-height: 1.8; margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+    .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
 
-    /* ── EDUCATION ── */
+    /* EDUCATION */
     #education { background: var(--ink2); }
     .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .edu-card {
       background: var(--ink3); padding: 3rem 2.5rem;
-      border: 1px solid var(--line);
-      position: relative; overflow: hidden;
+      border: 1px solid var(--line); position: relative; overflow: hidden;
       transition: border-color 0.3s ease, transform 0.3s ease;
     }
     .edu-card:hover { border-color: rgba(200,169,110,0.45); transform: translateY(-4px); }
     .edu-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px; background: linear-gradient(to right, var(--gold), transparent);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s ease;
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
     }
     .edu-card:hover::after { transform: scaleX(1); }
-    .edu-degree {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 400;
-      color: var(--white); margin-bottom: 0.8rem; line-height: 1.3;
-    }
-    .edu-school {
-      font-size: 0.88rem; color: var(--silver); margin-bottom: 0.5rem;
-    }
-    .edu-period {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.12em;
-      color: var(--gold); margin-bottom: 1rem;
-    }
-    .edu-note {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem; color: var(--silver);
-      padding: 0.5rem 0.8rem;
-      border: 1px solid var(--line); display: inline-block;
-    }
+    .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 0.8rem; line-height: 1.3; }
+    .edu-school { font-size: 0.88rem; color: var(--silver); margin-bottom: 0.5rem; }
+    .edu-period { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1rem; }
+    .edu-note { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--silver); padding: 0.5rem 0.8rem; border: 1px solid var(--line); display: inline-block; }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     #skills { background: var(--ink); }
     .skills-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
-    .skills-intro p { color: var(--silver); line-height: 1.9; }
     .skills-grid { display: flex; flex-direction: column; gap: 2.5rem; }
-    .skill-group-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.2em;
-      color: var(--gold); text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
+    .skill-group-title { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-tag {
-      padding: 0.45rem 1rem;
-      border: 1px solid var(--line);
-      font-size: 0.8rem; color: var(--silver);
-      letter-spacing: 0.04em;
-      transition: all 0.25s ease;
-      cursor: default;
-    }
-    .skill-tag:hover {
-      border-color: var(--gold);
-      color: var(--gold2);
-      background: rgba(200,169,110,0.06);
-    }
+    .skill-tag { padding: 0.45rem 1rem; border: 1px solid var(--line); font-size: 0.8rem; color: var(--silver); letter-spacing: 0.04em; transition: all 0.25s ease; }
+    .skill-tag:hover { border-color: var(--gold); color: var(--gold2); background: rgba(200,169,110,0.06); }
 
-    /* ── CERTIFICATIONS ── */
+    /* CERTIFICATIONS */
     #certs { background: var(--ink2); }
-    .cert-list { display: flex; flex-direction: column; gap: 0; }
-    .cert-item {
-      padding: 1.8rem 0;
-      border-bottom: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 2rem;
-    }
-    .cert-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 400; color: var(--white);
-    }
-    .cert-badge {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem; letter-spacing: 0.15em;
-      color: var(--gold); text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      border: 1px solid rgba(200,169,110,0.3);
-      white-space: nowrap;
-    }
+    .cert-list { display: flex; flex-direction: column; }
+    .cert-item { padding: 1.8rem 0; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .cert-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--white); }
+    .cert-badge { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; padding: 0.35rem 0.8rem; border: 1px solid rgba(200,169,110,0.3); white-space: nowrap; }
 
-    /* ── CONTACT ── */
-    #contact {
-      background: var(--ink);
-      text-align: center;
-      padding: 8rem 5vw;
-    }
+    /* CONTACT */
+    #contact { background: var(--ink); text-align: center; padding: 8rem 5vw; }
     .contact-inner { max-width: 700px; margin: 0 auto; }
     #contact h2 { margin-bottom: 1.5rem; }
-    #contact p { color: var(--silver); margin-bottom: 3rem; font-size: 1.05rem; }
+    #contact > .contact-inner > p { color: var(--silver); margin-bottom: 3rem; font-size: 1.05rem; }
     .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
     .contact-link {
-      display: flex; align-items: center; gap: 0.7rem;
-      text-decoration: none; color: var(--silver);
-      font-family: 'DM Mono', monospace; font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      padding: 1rem 1.6rem;
-      border: 1px solid var(--line);
+      display: flex; align-items: center; gap: 0.7rem; text-decoration: none;
+      color: var(--silver); font-family: 'DM Mono', monospace; font-size: 0.75rem;
+      letter-spacing: 0.1em; padding: 1rem 1.6rem; border: 1px solid var(--line);
       transition: all 0.3s ease;
     }
-    .contact-link:hover {
-      color: var(--gold2); border-color: var(--gold);
-      background: rgba(200,169,110,0.04);
-    }
-    .contact-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .contact-link:hover { color: var(--gold2); border-color: var(--gold); background: rgba(200,169,110,0.04); }
+    .contact-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink2);
-      padding: 2rem 5vw;
-      display: flex; align-items: center; justify-content: space-between;
-      border-top: 1px solid var(--line);
-    }
-    footer p {
-      font-family: 'DM Mono', monospace; font-size: 0.62rem;
-      color: var(--silver); letter-spacing: 0.12em;
-    }
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { animation: fadeUp 0.7s ease both; }
+    .reveal-delay-1 { animation-delay: 0.1s; }
+    .reveal-delay-2 { animation-delay: 0.2s; }
+    .reveal-delay-3 { animation-delay: 0.3s; }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* ── MOBILE ── */
+    /* MOBILE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .about-grid, .edu-grid, .skills-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .exp-item { grid-template-columns: 1fr; gap: 0.8rem; }
       .about-stats { grid-template-columns: 1fr 1fr; }
       .cert-item { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-    }
-
-    /* Horizontal line decoration */
-    .ornament {
-      text-align: center; color: var(--gold);
-      font-size: 1.2rem; letter-spacing: 1rem;
-      margin: 0.5rem 0;
-      opacity: 0.4;
     }
   </style>
 </head>
 <body>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor">
-    <div class="cursor-ring" id="cursorRing"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
-  </div>
-
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">AG</a>
     <ul class="nav-links">
@@ -479,68 +299,50 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="hero-inner">
-      <div class="hero-tag">Finance Professional · Melbourne</div>
+      <div class="hero-tag">Finance &amp; Investment &middot; Global</div>
       <h1>Aditya<br /><em>Gupta</em></h1>
-      <p class="hero-sub">
-        Aspiring finance professional with hands-on experience in financial analysis, valuation, and compliance — committed to delivering data-driven insights that support investment and business decisions.
-      </p>
+      <p class="hero-sub">Finance graduate with hands-on experience in financial analysis, valuation, and compliance &mdash; committed to delivering data-driven insights that support investment and business decisions.</p>
       <div class="hero-cta">
         <a href="#experience" class="btn-primary">View Experience</a>
-        <a href="mailto:agup0059@student.monash.edu" class="btn-outline">Get in Touch</a>
+        <a href="/cdn-cgi/l/email-protection#7110160401414144483102050415141f055f1c1e1f1002195f141504" class="btn-outline">Email &rarr;</a>
       </div>
     </div>
-    <div class="hero-scroll">Scroll</div>
+    <div class="hero-scroll" aria-hidden="true"></div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-label">About</div>
         <h2>Driven by <em>numbers,</em> guided by insight</h2>
         <p>I combine <strong>rigorous financial modelling</strong> with a deep understanding of regulatory frameworks to support strategic investment and corporate decisions.</p>
-        <p>With experience spanning DCF valuation, cash flow forecasting, variance reporting, and compliance across <strong>GST, IT, and TDS</strong> frameworks, I bring both technical depth and practical business acumen to the table.</p>
-        <p>Currently pursuing my <strong>Master of Advanced Finance & Master of Global Business</strong> at Monash University, Melbourne — sharpening my analytical toolkit at a global level.</p>
+        <p>With experience spanning DCF valuation, cash flow forecasting, variance reporting, and compliance across <strong>indirect tax, income tax, and withholding tax</strong> frameworks, I bring both technical depth and practical business acumen.</p>
+        <p>Currently pursuing my <strong>Master of Advanced Finance &amp; Master of Global Business</strong> at Monash University &mdash; sharpening my analytical toolkit at a global level.</p>
       </div>
       <div class="about-stats reveal reveal-delay-2">
-        <div class="stat-box">
-          <div class="stat-num">2+</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">DCF</div>
-          <div class="stat-label">Valuation Models</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">3+</div>
-          <div class="stat-label">Industry Roles</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">Ind AS</div>
-          <div class="stat-label">Compliance Standards</div>
-        </div>
+        <div class="stat-box"><div class="stat-num">2+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat-box"><div class="stat-num">DCF</div><div class="stat-label">Valuation Models</div></div>
+        <div class="stat-box"><div class="stat-num">3+</div><div class="stat-label">Industry Roles</div></div>
+        <div class="stat-box"><div class="stat-num">IFRS</div><div class="stat-label">Compliance Standards</div></div>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-label reveal">Experience</div>
-    <h2 class="reveal reveal-delay-1">Where I've <em>contributed</em></h2>
-
+    <h2 class="reveal reveal-delay-1">Where I&rsquo;ve <em>contributed</em></h2>
     <div class="exp-list">
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Mar 2024 – Feb 2025</div>
-          <div class="exp-company">S.K. Kapoor &amp; Co.<br />Chartered Accountants<br />New Delhi</div>
+          <div class="exp-period">Mar 2024 &ndash; Feb 2025</div>
+          <div class="exp-company">S.K. Kapoor &amp; Co.<br />Chartered Accountants, New Delhi</div>
         </div>
         <div>
           <div class="exp-role">Business &amp; Financial Analyst</div>
@@ -549,22 +351,22 @@
             <li>Built DCF and scenario-based valuation models incorporating behavioural finance and fintech insights for investment analysis and portfolio decision-making.</li>
             <li>Delivered cash flow forecasting, ratio analysis, and variance reporting for corporate finance and asset allocation across multiple client engagements.</li>
             <li>Automated financial dashboards and reports in Excel (Power Query, PivotTables, VLOOKUP), improving reporting efficiency and data accessibility.</li>
-            <li>Managed tax filings and compliance (GST, IT, TDS) using Tally and ClearTax, ensuring accuracy and alignment with regulatory standards.</li>
-            <li>Assisted in internal and statutory audits, preparing schedules and ensuring compliance with Ind AS and global reporting standards.</li>
+            <li>Managed tax filings and compliance (indirect tax, income tax, and withholding tax) using accounting and tax filing software, ensuring accuracy and alignment with regulatory standards.</li>
+            <li>Assisted in internal and statutory audits, preparing schedules and ensuring compliance with local and international accounting standards.</li>
           </ul>
         </div>
       </div>
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">Jul 2023 – Aug 2023</div>
-          <div class="exp-company">D.S. Sinha &amp; Co.<br />Chartered Accountants<br />Lucknow</div>
+          <div class="exp-period">Jul 2023 &ndash; Aug 2023</div>
+          <div class="exp-company">D.S. Sinha &amp; Co.<br />Chartered Accountants, Lucknow</div>
         </div>
         <div>
           <div class="exp-role">Finance Intern</div>
           <div class="exp-location">Lucknow, India</div>
           <ul class="exp-bullets">
-            <li>Prepared financial statements, GST returns, and indirect tax filings with precision and adherence to regulatory requirements.</li>
+            <li>Prepared financial statements, indirect tax returns, and statutory filings with precision and adherence to regulatory requirements.</li>
             <li>Performed ratio analysis, budget monitoring, and reconciliations to support corporate finance and investment decisions.</li>
             <li>Supported asset and liability management through detailed reconciliations of fixed assets, receivables, and payables.</li>
           </ul>
@@ -573,14 +375,12 @@
 
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-period">2025 – Present</div>
-          <div class="exp-company">Monash University<br />Melbourne</div>
+          <div class="exp-period">2025 &ndash; Present</div>
+          <div class="exp-company">Monash University</div>
         </div>
         <div>
           <div class="exp-role">Campus Ambassador</div>
-          <div class="exp-location">Melbourne, Australia</div>
-          <ul class="exp-bullets">
-            <li>Led targeted outreach campaigns to prospective students, communicating program value and supporting recruitment objectives.</li>
+          <div class="exp-location">Australia</div>
             <li>Represented Monash University at campus events and external forums, enhancing institutional visibility and engagement.</li>
           </ul>
         </div>
@@ -589,11 +389,11 @@
       <div class="exp-item reveal">
         <div class="exp-meta">
           <div class="exp-period">Ongoing</div>
-          <div class="exp-company">EdConnect<br />Volunteer</div>
+          <div class="exp-company">EdConnect &mdash; Volunteer</div>
         </div>
         <div>
           <div class="exp-role">Community Service Volunteer</div>
-          <div class="exp-location">Melbourne, Australia</div>
+          <div class="exp-location">Australia</div>
           <ul class="exp-bullets">
             <li>Facilitated student learning through tailored literacy and mathematics instruction, strengthening pedagogical and interpersonal skills.</li>
             <li>Collaborated with programme coordinators and fellow volunteers to optimise learning outcomes.</li>
@@ -606,20 +406,19 @@
 
   <div class="divider"></div>
 
-  <!-- EDUCATION -->
   <section id="education">
     <div class="section-label reveal">Education</div>
     <h2 class="reveal reveal-delay-1">Academic <em>foundation</em></h2>
     <div class="edu-grid">
       <div class="edu-card reveal">
-        <div class="edu-period">2025 – Present</div>
+        <div class="edu-period">2025 &ndash; Present</div>
         <div class="edu-degree">Master of Advanced Finance &amp; Master of Global Business</div>
-        <div class="edu-school">Monash University · Melbourne, Australia</div>
+        <div class="edu-school">Monash University &middot; Australia</div>
       </div>
       <div class="edu-card reveal reveal-delay-2">
-        <div class="edu-period">2021 – 2024</div>
+        <div class="edu-period">2021 &ndash; 2024</div>
         <div class="edu-degree">Bachelor of Business Administration</div>
-        <div class="edu-school">Symbiosis International University · India</div>
+        <div class="edu-school">Symbiosis International University &middot; India</div>
         <br />
         <div class="edu-note">Major: Financial Management &nbsp;|&nbsp; CGPA: 7.58</div>
       </div>
@@ -628,13 +427,12 @@
 
   <div class="divider"></div>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="skills-layout">
       <div class="reveal">
         <div class="section-label">Skills</div>
         <h2>Technical <em>toolkit</em></h2>
-        <p>A blend of financial theory, analytical tooling, and regulatory expertise — built through practice across multiple client-facing engagements.</p>
+        <p style="color:var(--silver);line-height:1.9;">A blend of financial theory, analytical tooling, and regulatory expertise &mdash; built through practice across multiple client-facing engagements.</p>
       </div>
       <div class="skills-grid">
         <div class="reveal">
@@ -651,24 +449,24 @@
         <div class="reveal reveal-delay-1">
           <div class="skill-group-title">Tools &amp; Technology</div>
           <div class="skill-tags">
-            <span class="skill-tag">Excel — Advanced</span>
+            <span class="skill-tag">Excel &mdash; Advanced</span>
             <span class="skill-tag">Power Query</span>
             <span class="skill-tag">PivotTables</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">R</span>
             <span class="skill-tag">Bloomberg</span>
             <span class="skill-tag">FactSet</span>
-            <span class="skill-tag">Tally</span>
-            <span class="skill-tag">ClearTax</span>
+            <span class="skill-tag">Accounting Software</span>
+            <span class="skill-tag">Tax Filing Software</span>
           </div>
         </div>
         <div class="reveal reveal-delay-2">
           <div class="skill-group-title">Regulatory &amp; Compliance</div>
           <div class="skill-tags">
-            <span class="skill-tag">Ind AS Standards</span>
-            <span class="skill-tag">GST Compliance</span>
-            <span class="skill-tag">Income Tax (IT)</span>
-            <span class="skill-tag">TDS</span>
+            <span class="skill-tag">IFRS / GAAP Standards</span>
+            <span class="skill-tag">Indirect Tax Compliance</span>
+            <span class="skill-tag">Income Tax</span>
+            <span class="skill-tag">Withholding Tax</span>
             <span class="skill-tag">Internal Audit</span>
             <span class="skill-tag">Statutory Audit</span>
           </div>
@@ -679,13 +477,12 @@
 
   <div class="divider"></div>
 
-  <!-- CERTS -->
   <section id="certs">
     <div class="section-label reveal">Certifications</div>
     <h2 class="reveal reveal-delay-1">Credentials &amp; <em>clearances</em></h2>
     <div class="cert-list">
       <div class="cert-item reveal">
-        <div class="cert-name">National Crime Check — Right to Work</div>
+        <div class="cert-name">National Crime Check &mdash; Right to Work</div>
         <div class="cert-badge">Verified</div>
       </div>
       <div class="cert-item reveal reveal-delay-1">
@@ -701,65 +498,49 @@
 
   <div class="divider"></div>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
       <div class="section-label reveal" style="justify-content:center">Contact</div>
-      <h2 class="reveal reveal-delay-1">Let's <em>connect</em></h2>
-      <p class="reveal reveal-delay-2">Open to opportunities in financial analysis, investment advisory, and corporate finance. Based in Melbourne, available globally.</p>
+      <h2 class="reveal reveal-delay-1">Let&rsquo;s <em>connect</em></h2>
+      <p class="reveal reveal-delay-2">Open to opportunities in financial analysis, investment advisory, and corporate finance. Available globally.</p>
       <div class="contact-links reveal reveal-delay-3">
-        <a href="mailto:agup0059@student.monash.edu" class="contact-link">
+        <a href="/cdn-cgi/l/email-protection#2140465451111114186152555445444f550f4c4e4f4052490f444554" class="contact-link">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          agup0059@student.monash.edu
-        </a>
-        <a href="tel:+61432276469" class="contact-link">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
-          +61 432 276 469
+          Email &rarr;
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Aditya Gupta — All rights reserved</p>
-    <p>www.adityagupta.cv</p>
-  </footer>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // SCROLL REVEAL
+    var reveals = document.querySelectorAll('.reveal');
 
-  <script>
-    // ── CURSOR ──
-    const ring = document.getElementById('cursorRing');
-    const dot  = document.getElementById('cursorDot');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateCursor() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      dot.style.transform  = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      requestAnimationFrame(animateCursor);
+    function revealAll() {
+      reveals.forEach(function(el) { el.classList.add('visible'); });
     }
-    animateCursor();
 
-    // ── SCROLL REVEAL ──
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+      reveals.forEach(function(el) { obs.observe(el); });
+      setTimeout(revealAll, 300);
+    } else {
+      revealAll();
+    }
 
-    // ── NAV ACTIVE STATE ──
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
-      });
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
-      });
-    });
-  </script>
-</body>
-</html>
+    window.addEventListener('load', revealAll);
+
+    // NAV HIGHLIGHT
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', function() {
+      var current = '';
+      sections.forEach(function(sec) {
+        if (window.scrollY >= sec.offsetT
